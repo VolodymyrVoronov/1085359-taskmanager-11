@@ -381,7 +381,7 @@ renderElement(siteMainElement, createFilterTemplate());
 renderElement(siteMainElement, createBoardTemplate());
 
 const taskListElemet = siteMainElement.querySelector(`.board__tasks`);
-const boardElement = siteMainElement.querySelector('.board');
+const boardElement = siteMainElement.querySelector(`.board`);
 
 renderElement(taskListElemet, createTaskEditTemplate());
 
