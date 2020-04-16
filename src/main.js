@@ -12,9 +12,7 @@ import {generateTasks} from "./mock/task.js";
 import {generateFilters} from "./mock/filter.js";
 import {render, RenderPosition} from "./utils.js";
 
-const AMOUNT_OF_TASKS = 22;
-const SHOWING_TASKS_COUNT_ON_START = 8;
-const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
+import {TASKS} from "./const.js";
 
 const renderTask = (taskListElement, task) => {
   const replaceTaskToEdit = () => {
@@ -65,7 +63,7 @@ const renderBoard = (boardComponent, tasks) => {
 
   const taskListElement = boardComponent.getElement().querySelector(`.board__tasks`);
 
-  let showingTasksCount = SHOWING_TASKS_COUNT_ON_START;
+  let showingTasksCount = TASKS.AMOUNT_ON_START;
 
   tasks.slice(0, showingTasksCount)
     .forEach((task) => {
@@ -77,7 +75,7 @@ const renderBoard = (boardComponent, tasks) => {
 
   loadMoreButtonComponent.getElement().addEventListener(`click`, () => {
     const prevTasksCount = showingTasksCount;
-    showingTasksCount = showingTasksCount + SHOWING_TASKS_COUNT_BY_BUTTON;
+    showingTasksCount = showingTasksCount + TASKS.AMOUNT_BY_BTN;
 
     tasks.slice(prevTasksCount, showingTasksCount)
       .forEach((task) => renderTask(taskListElement, task));
@@ -92,7 +90,7 @@ const renderBoard = (boardComponent, tasks) => {
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 
-const tasks = generateTasks(AMOUNT_OF_TASKS);
+const tasks = generateTasks(TASKS.AMOUNT);
 const filters = generateFilters();
 
 render(siteHeaderElement, new SiteMenuComponent().getElement(), RenderPosition.BEFOREEND);
