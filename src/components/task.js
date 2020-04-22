@@ -68,7 +68,7 @@ export default class Task extends AbstractComponent {
     this._task = task;
   }
 
-  getTemplate () {
+  getTemplate() {
     return createTaskTemplate(this._task);
   }
 
@@ -76,4 +76,4 @@ export default class Task extends AbstractComponent {
     this.getElement().querySelector(`.card__btn--edit`)
       .addEventListener(`click`, handler);
   }
-};
+}

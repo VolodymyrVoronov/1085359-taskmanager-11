@@ -12,7 +12,7 @@ const createSortTemplate = () => (`<div class="board__filter-list">
       <a href="#" class="board__filter">SORT BY DATE down</a>
     </div>`);
 
-export default class Sort extends AbstractComponent{
+export default class Sort extends AbstractComponent {
   getTemplate() {
     return createSortTemplate();
   }
@@ -40,4 +40,4 @@ export default class Sort extends AbstractComponent{
       handler(this._currenSortType);
     });
   }
-};
+}

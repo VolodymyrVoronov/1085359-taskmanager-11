@@ -6,4 +6,4 @@ export default class Board extends AbstractComponent {
   getTemplate() {
     return createBoardTemplate();
   }
-};
+}
