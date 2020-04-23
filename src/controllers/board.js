@@ -92,9 +92,6 @@ export default class BoardController {
 
         renderTasks(taskListElement, sortedTasks);
 
-        // tasks.slice(prevTasksCount, showingTasksCount)
-        //   .forEach((task) => renderTask(taskListElement, task));
-
         if (showingTasksCount >= tasks.length) {
           remove(this._loadMoreButtonComponent);
         }
@@ -127,9 +124,6 @@ export default class BoardController {
       taskListElement.innerHTML = ``;
 
       renderTasks(taskListElement, sortedTasks);
-
-      // tasks.slice(prevTasksCount, showingTasksCount)
-      //   .forEach((task) => renderTask(taskListElement, task));
 
       renderLoadMoreButton();
     });
