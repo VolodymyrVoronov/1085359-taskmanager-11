@@ -28,14 +28,14 @@ export default class Sort extends AbstractComponent {
   }
 
   setSortTypeChangeHandler(handler) {
-    this.getElement().addEventListener(`click`, (evt) => {
-      evt.preventDefault();
+    this.getElement().addEventListener(`click`, (e) => {
+      e.preventDefault();
 
-      if (evt.target.tagName !== `A`) {
+      if (e.target.tagName !== `A`) {
         return;
       }
 
-      const sortType = evt.target.dataset.sortType;
+      const sortType = e.target.dataset.sortType;
 
       if (this._currenSortType === sortType) {
         return;
